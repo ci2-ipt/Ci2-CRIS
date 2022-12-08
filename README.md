@@ -5,8 +5,10 @@ Repository for the weab app CI2-CRIS
 https://github.com/orgs/ci2-ipt/projects/2
 
 ## Branch name conventions:
+
 *For features: feature/CI2-CRIS-TIC_NUM/TICKET-DESC
 *For bugfixes: bugfix/CI2-TIC_NUM/TICKET-DESC
+
   	Where:
     *TIC_NUM - Ticket Number / ID
     *TICKET-DESC - Brief 3 to 6 word description of the ticket/issue based on its title
