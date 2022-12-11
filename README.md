@@ -4,6 +4,9 @@ Repository for the weab app CI2-CRIS
 ## Check ongoing work in the Project Board
 https://github.com/orgs/ci2-ipt/projects/2
 
+## How to run in containers
+- Run script `1_run_local_docker.sh` located in `2_tools`
+
 ## Branch name conventions:
 
 *For features: feature/CI2-CRIS-TIC_NUM/TICKET-DESC
