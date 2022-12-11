@@ -1,7 +1,9 @@
-cd -- "$(dirname "$0")"
+#!/bin/sh
 
 # exit when any command fails
 set -e
+
+cd -- "$(dirname "$0")"
 
 echo '------ Running Rails BE & FE...'
 echo 'Ctrl + C to exit'

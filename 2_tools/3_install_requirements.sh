@@ -1,3 +1,10 @@
+#!/bin/sh
+
+# exit when any command fails
+set -e
+
+#----------------------- docker -----------------------#
+echo "Installing docker"
 # Install Docker, you can ignore the warning from Docker about using WSL
 curl -fsSL https://get.docker.com -o /tmp/get-docker.sh
 sudo sh /tmp/get-docker.sh
@@ -18,3 +25,6 @@ sudo docker compose version
 # Using Ubuntu 22.04 or Debian 10 / 11? You need to do 1 extra step for iptables
 # compatibility, you'll want to choose option (1) from the prompt to use iptables-legacy.
 sudo update-alternatives --config iptables
+
+echo "Installed successfully!"
+#--------------------- end docker ---------------------#
