@@ -1,0 +1,12 @@
+<h1><%= @projects.title %></h1>
+
+<p><%= @projects.body %></p>
+
+<ul>
+  <li><%= link_to "Home", root_path %></li>
+  <li><%= link_to "Edit", edit_project_path(@projects) %></li>
+    <li><%= link_to "Destroy", project_path(@projects), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
