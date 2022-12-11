@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: ../../1_src
+      target: local-stage
+    image: ci2-cris:local
+    container_name: ci2-cris
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    working_dir: /app
+    volumes:
+      - ../../1_src:/app
+    ports:
+      - 3000:3000
+    command: >
+      sh -c "bundle install &&
+             rails server -b 0.0.0.0"
+
+# networks:
+#   default:
+#     external:
+#       name: docker-shared-external-network
