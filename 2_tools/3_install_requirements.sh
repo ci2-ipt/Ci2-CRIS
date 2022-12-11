@@ -1,6 +1,20 @@
-#!/bin/sh
+# Install Docker, you can ignore the warning from Docker about using WSL
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
 
-DIR=$(dirname "$0")
+# Add your user to the Docker group
+sudo usermod -aG docker $USER
 
-# docker & docker-compose
-sudo apt-get install docker docker-compose -y
+# Install Docker Compose v2
+sudo apt-get update && sudo apt-get install docker-compose-plugin
+
+# Run docker
+sudo service docker start
+
+# Sanity check that both tools were installed successfully
+sudo docker --version
+sudo docker compose version
+
+# Using Ubuntu 22.04 or Debian 10 / 11? You need to do 1 extra step for iptables
+# compatibility, you'll want to choose option (1) from the prompt to use iptables-legacy.
+sudo update-alternatives --config iptables

@@ -18,7 +18,7 @@ services:
       sh -c "bundle install &&
              rails server -b 0.0.0.0"
 
-networks:
-  default:
-    external:
-      name: docker-shared-external-network
+# networks:
+#   default:
+#     external:
+#       name: docker-shared-external-network
