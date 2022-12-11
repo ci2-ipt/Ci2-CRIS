@@ -1,6 +1,6 @@
 # Install Docker, you can ignore the warning from Docker about using WSL
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
+curl -fsSL https://get.docker.com -o /tmp/get-docker.sh
+sudo sh /tmp/get-docker.sh
 
 # Add your user to the Docker group
 sudo usermod -aG docker $USER
