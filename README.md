@@ -4,8 +4,12 @@ Repository for the weab app CI2-CRIS
 ## Check ongoing work in the Project Board
 https://github.com/orgs/ci2-ipt/projects/2
 
-## How to run in containers
+## Install requirements
+- Run script `3_install_requirements.sh` located in `3_tools`
+## How to run in app and containers
+Note: Requires docker version >= 20.10.21 and docker-compose version >= 1.29.2. This is automatically installed as part of the script `3_install_requirements.sh`
 - Run script `1_run_local_docker.sh` located in `2_tools`
+- Visit `http://localhost:3000` in your browser
 
 ## Branch name conventions:
 
