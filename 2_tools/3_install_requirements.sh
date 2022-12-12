@@ -1,30 +1,34 @@
-#!/bin/sh
+#!/bin/bash
 
 # exit when any command fails
 set -e
 
 #----------------------- docker -----------------------#
-echo "Installing docker"
-# Install Docker, you can ignore the warning from Docker about using WSL
-curl -fsSL https://get.docker.com -o /tmp/get-docker.sh
+echo '-------------------- Installing docker'
+
+# uninstall previous installations
+sudo apt-get purge -y docker-engine docker docker.io docker-ce docker-ce-cli docker-compose-plugin
+sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce docker-compose-plugin
+
+# install docker, you can ignore the warning from docker about using WSL
+sudo curl -fsSL https://get.docker.com -o /tmp/get-docker.sh
 sudo sh /tmp/get-docker.sh
 
-# Add your user to the Docker group
+# install docker-compose
+sudo curl -L 'https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)' -o /usr/bin/docker-compose
+sudo chmod +x /usr/bin/docker-compose
+
+# create docker user group if not exists
+sudo getent group docker || sudo groupadd docker
+# add your user to the docker group
 sudo usermod -aG docker $USER
 
-# Install Docker Compose v2
-sudo apt-get update && sudo apt-get install docker-compose-plugin
+# run docker
+sudo service docker restart
 
-# Run docker
-sudo service docker start
-
-# Sanity check that both tools were installed successfully
+# sanity check that both tools were installed successfully
 sudo docker --version
-sudo docker compose version
+sudo docker-compose --version
 
-# Using Ubuntu 22.04 or Debian 10 / 11? You need to do 1 extra step for iptables
-# compatibility, you'll want to choose option (1) from the prompt to use iptables-legacy.
-sudo update-alternatives --config iptables
-
-echo "Installed successfully!"
+echo '-------------------- Installed successfully!'
 #--------------------- end docker ---------------------#

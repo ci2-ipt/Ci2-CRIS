@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
 # exit when any command fails
 set -e
 
 cd -- "$(dirname "$0")"
 
-echo '------ Running Rails BE & FE...'
+echo '-------------------- Running Rails BE & FE'
 echo 'Ctrl + C to exit'
 
 cd ./docker
