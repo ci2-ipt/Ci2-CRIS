@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# exit when any command fails
-set -e
-
 #----------------------- docker -----------------------#
 echo '-------------------- Installing docker'
 
@@ -10,12 +7,15 @@ echo '-------------------- Installing docker'
 sudo apt-get purge -y docker-engine docker docker.io docker-ce docker-ce-cli docker-compose-plugin
 sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce docker-compose-plugin
 
+# from here onwards, exit when any command fails
+set -e
+
 # install docker, you can ignore the warning from docker about using WSL
 sudo curl -fsSL https://get.docker.com -o /tmp/get-docker.sh
 sudo sh /tmp/get-docker.sh
 
 # install docker-compose
-sudo curl -L 'https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)' -o /usr/bin/docker-compose
+sudo curl -L 'https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64' -o /usr/bin/docker-compose
 sudo chmod +x /usr/bin/docker-compose
 
 # create docker user group if not exists
