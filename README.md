@@ -7,6 +7,7 @@ https://github.com/orgs/ci2-ipt/projects/2
 ## How to run app in containers
 Note: Requires docker version >= 20.10.21 and docker-compose version >= 1.29.2. These are automatically installed as part of the script `0_install_requirements.sh`
 - Run script `0_install_requirements.sh` located in `3_tools` to install docker & docker-compose
+- Make sure docker & docker-compose is running
 - Run script `1_run_local_docker.sh` located in `2_tools`
 - Visit `http://localhost:3000` in your browser
 - To check the containers, use `docker container ps`
