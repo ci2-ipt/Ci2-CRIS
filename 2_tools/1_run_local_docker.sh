@@ -9,8 +9,6 @@ echo '-------------------- Starting local containers'
 
 cd ./docker
 
-sudo service docker start
-
 sudo docker-compose -f ./docker-compose.local.yml up --build -d
 
 echo '-------------------- Local containers started successfully!'

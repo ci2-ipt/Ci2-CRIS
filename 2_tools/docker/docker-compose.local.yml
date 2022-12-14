@@ -22,17 +22,20 @@ services:
       - 3000:3000
     depends_on:
       - mariadb
-    command: sh -c "rm -f tmp/pids/server.pid && bin/dev"
+    command: sh -c "yarn install && rm -f tmp/pids/server.pid && bin/dev"
 
   mariadb:
     image: mariadb:focal
     container_name: mariadb-ci2-cris
     restart: unless-stopped
     environment:
+      MYSQL_DATABASE: ci2_cris
       MYSQL_USER: admin
       MYSQL_PASSWORD: password
       MYSQL_ROOT_PASSWORD: password
     volumes:
       - ../../1_src/db/mysql:/var/lib/mysql
+    ports:
+      - 3307:3306
     expose:
       - '3306'
