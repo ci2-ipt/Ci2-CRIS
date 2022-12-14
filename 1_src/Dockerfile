@@ -19,9 +19,6 @@ WORKDIR /app
 # we pre install gems to take advantage of docker cache
 COPY Gemfile Gemfile.lock ./
 RUN bundle install
-# we pre install packages to take advantage of docker cache
-COPY package.json yarn.lock ./
-RUN yarn install
 EXPOSE 3000
 
 # for local development

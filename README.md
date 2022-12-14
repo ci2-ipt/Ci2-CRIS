@@ -8,7 +8,7 @@ https://github.com/orgs/ci2-ipt/projects/2
 Note: Requires docker version >= 20.10.21 and docker-compose version >= 1.29.2. These are automatically installed as part of the script `0_install_requirements.sh`
 - Run script `0_install_requirements.sh` located in `3_tools` to install docker & docker-compose
 - Make sure docker & docker-compose is running
-- Run script `1_run_local_docker.sh` located in `2_tools`
+- Run script `1_run_local_docker.sh` located in `2_tools`. After that, you need to wait for the container installation to finish (yarn packages, migrations, etc.). You can view this live by following the rails container logs using the script `5_rails_container_follow_logs.sh`. The installation will take some time the first time, but after that it should be pretty quick
 - Visit `http://localhost:3000` in your browser
 - To check the containers, use `docker container ps`
 - To restart the rails server, run the script `4_restart_rails_container.sh`
@@ -18,6 +18,8 @@ Note: Requires docker version >= 20.10.21 and docker-compose version >= 1.29.2. 
 
 ## Development Notes
 - You need to restart the rails server everytime you make config changes to ther server
+- If any of the scripts fail, just try to run it again 2-3 times
+- It is recommended to continuously monitor the rails container logs to be aware of any errors
 
 ## Branch name conventions:
 
