@@ -41,7 +41,7 @@ Note: Requires docker version >= 20.10.21 and docker-compose version >= 1.29.2. 
 - Use GitHub interface to create PRs, do not use your local git commands or VS Code
 - In GitHub
   - Don't forget to link the sprint to the PR ("Milestone" field)
-  - Don't forget to link the project ticket to the PR ("Development" field)
+  - Don't forget to link the project ticket to the PR (Add "Closes #22" to the description of the PR and github will automatically link it. Replace 22 with your ticket number)
 # Sketch of ideas
 
 ![20221205_211943](https://user-images.githubusercontent.com/113514374/205775943-9ee4056a-c98f-4c66-a47c-de1ce866f71a.jpg)
