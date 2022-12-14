@@ -1,5 +1,5 @@
 # Ci2 - CRIS
-Repository for the weab app CI2-CRIS
+Repository for the web app CI2-CRIS
 
 ## Check ongoing work in the Project Board
 https://github.com/orgs/ci2-ipt/projects/2
@@ -23,16 +23,16 @@ Note: Requires docker version >= 20.10.21 and docker-compose version >= 1.29.2. 
 
 ## Branch name conventions:
 
-- For features: feature/CI2-CRIS-##/XXXX
-- For bugs & fixes: fix/CI2-##/XXXX
+- For features: feature/ci2-cris-##/XXXX
+- For bugs & fixes: fix/ci2-cris-##/XXXX
 
       Where:
       - ## => Ticket Number / ID
       - XXXX => Brief 3 to 6 word description of the ticket/issue based on its title
       
       Examples:
-      - feature/CI2-CRIS-##/add-user-model
-      - fix/CI2-CRIS-##/index-title-has-wrong-color
+      - feature/ci2-cris-##/add-user-model
+      - fix/ci2-cris-##/index-title-has-wrong-color
 
 # Sketch of ideas
 
