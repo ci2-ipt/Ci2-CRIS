@@ -1,0 +1,62 @@
+<ul class="list-group">
+<%= form_with model: @projects do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <% @projects.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %><br>
+    <% @projects.errors.full_messages_for(:description).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.text_area :body %>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= form.date_field :start_date %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.date_field :end_date %>
+      <% @projects.errors.full_messages_for(:description2).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.collection_select :role, Project::Role, :to_s, :to_s, 
+       :include_blank => true %>
+  </div>
+</ul>
+
+<ul class="list-group">
+<div>
+  <h6>Grant Number:</h6>
+    <%= form.text_area :grant_number %>
+  </div>
+  <div>
+  <h6>URL:</h6>
+    <%= form.text_area :url_project %>
+  </div>
+  <div>
+<%= form.radio_button :relationship, "child" %>
+<%= form.label :relationship_part, "Part of" %>
+<%= form.radio_button :relationship, "adult" %>
+<%= form.label :relationship_self, "Self" %>
+
+  </div>
+</ul>
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
