@@ -17,7 +17,7 @@
   </div>
 
   <div>
-    <%= form.text_area :body %>
+    <%= form.text_area :description2 %>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -25,9 +25,6 @@
     </div>
     <div class="form-group col-md-6">
       <%= form.date_field :end_date %>
-      <% @projects.errors.full_messages_for(:description2).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
     </div>
   </div>
 
@@ -51,7 +48,6 @@
 <%= form.label :relationship_part, "Part of" %>
 <%= form.radio_button :relationship, "adult" %>
 <%= form.label :relationship_self, "Self" %>
-
   </div>
 </ul>
 
