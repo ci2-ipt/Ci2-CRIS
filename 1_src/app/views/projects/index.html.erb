@@ -1,4 +1,10 @@
-<h1>Projects</h1>
+<div class="section-header">
+  <h2>Projectos</h2>
+</div>
+
+<%= link_to "New Project", new_project_path %>
+
+<div class="container position-relative">
 
 <ul>
   <% @projects.each do |project| %>
@@ -8,4 +14,4 @@
   <% end %>
 </ul>
 
-<%= link_to "New Project", new_project_path %>
+</div>

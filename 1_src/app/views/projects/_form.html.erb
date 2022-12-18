@@ -1,5 +1,4 @@
-<ul class="list-group">
-<%= form_with model: @projects do |form| %>
+<%= form_with model: @projects, :html => {:class => "php-email-form"} do |form| %>
   <div>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
@@ -32,7 +31,6 @@
     <%= form.collection_select :role, Project::Role, :to_s, :to_s, 
        :include_blank => true %>
   </div>
-</ul>
 
 <ul class="list-group">
 <div>
