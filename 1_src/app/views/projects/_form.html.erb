@@ -1,6 +1,6 @@
 <%= form_with model: @projects, :html => {:class => "php-email-form"} do |form| %>
-  <div>
-    <%= form.label :title %><br>
+  <div class="form-group">
+    <%= form.label :title, class: "col-md-4 control-label" %><br>
     <%= form.text_field :title %>
     <% @projects.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
