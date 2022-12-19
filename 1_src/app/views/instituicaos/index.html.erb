@@ -1,0 +1,13 @@
+<h1>instituições</h1>
+
+<ul>
+  <% @instituicaos.each do |instituicao| %>
+    <li>
+     <a href="<%= instituicao_path(instituicao)%>">
+      <%= link_to instituicao.nome, instituicao %>
+     </a>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Nova Instituição", new_instituicao_path %>

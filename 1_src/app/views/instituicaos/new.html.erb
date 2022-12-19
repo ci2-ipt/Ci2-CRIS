@@ -1,0 +1,39 @@
+<h1>Nova instituição</h1>
+
+<%= form_with model: @instituicaos do |form| %>
+  <div>
+    <%= form.label :nome %><br>
+    <%= form.text_field :nome %>
+    <% @instituicaos.errors.full_messages_for(:nome).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :url %><br>
+    <%= form.text_area :url %>
+    <% @instituicaos.errors.full_messages_for(:url).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  
+  <div>
+    <%= form.label :imagem %><br>
+    <%= form.text_area :imagem %>
+    <% @instituicaos.errors.full_messages_for(:imagem).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :parceiros %><br>
+    <%= form.text_area :parceiros %>
+    <% @instituicaos.errors.full_messages_for(:parceiros).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
