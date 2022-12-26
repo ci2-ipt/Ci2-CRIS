@@ -1,0 +1,23 @@
+<div class="section-header">
+  <h1><%= @projects.title %></h1>
+</div>
+
+<div class="blog">
+  <div class="container aos-init aos-animate">
+    <article class="blog-details">
+      <p><%= @projects.description %></p>
+      <p><%= @projects.start_date %></p>
+      <p><%= @projects.end_date %></p>
+      <p><%= @projects.url_project %></p>
+      <p><%= @projects.role %></p>
+
+      <ul>
+        <li><%= link_to "Edit", edit_project_path(@projects) %></li>
+        <li><%= link_to "Destroy", project_path(@projects), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+      </ul>
+    </article>
+  </div>
+</div>
