@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  authors: MyString
+  publish_date: 2022-12-28
+  pages: 1
+  abstract: MyText
+  keywords: MyString
+  url: MyString
+  ids: MyString
+  type: 
+
+two:
+  title: MyString
+  authors: MyString
+  publish_date: 2022-12-28
+  pages: 1
+  abstract: MyText
+  keywords: MyString
+  url: MyString
+  ids: MyString
+  type: 

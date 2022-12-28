@@ -1,0 +1,2 @@
+class Thesis < Article
+end
