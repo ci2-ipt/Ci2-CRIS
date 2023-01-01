@@ -1,0 +1,28 @@
+<%= form_with model: @instituicaos do |form| %>
+  <div>
+    <%= form.label :nome %><br>
+    <%= form.text_field :nome %>
+    <% @instituicaos.errors.full_messages_for(:nome).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :url %><br>
+    <%= form.text_area :url %>
+  </div>
+  
+  <div>
+    <%= form.label :imagem %><br>
+    <%= form.file_field :imagem, accept: 'image/png,image/jpeg' %>
+  </div>
+
+  <div>
+    <%= form.label :parceiros %><br>
+    <%= form.text_area :parceiros %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

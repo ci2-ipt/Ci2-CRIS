@@ -12,7 +12,7 @@ class InstituicaosController < ApplicationController
   end
 
   def create
-    @instituicaos = Instituicao.new(article_params)
+    @instituicaos = Instituicao.new(instituicao_params)
 
     if @instituicaos.save
       redirect_to @instituicaos
@@ -21,8 +21,29 @@ class InstituicaosController < ApplicationController
     end
   end
 
-  private
-  def article_params
-    params.require(:Instituicao).permit(:nome, :url, :imagem, :parceiros)
+  def edit
+    @instituicaos = Instituicao.find(params[:id])
   end
+
+  def update
+    @instituicaos = Instituicao.find(params[:id])
+
+    if @instituicaos.update(instituicao_params)
+      redirect_to @instituicaos
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @instituicaos = Instituicao.find(params[:id])
+    @instituicaos.destroy
+
+    redirect_to root_path, status: :see_other
+  end
+
+  private
+    def instituicao_params
+      params.require(:Instituicao).permit(:nome, :url, :imagem, :parceiros)
+    end
 end

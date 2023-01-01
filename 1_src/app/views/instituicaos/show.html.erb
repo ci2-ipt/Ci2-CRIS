@@ -5,3 +5,9 @@
 <p><%= @instituicaos.imagem %></p>
 <p><%= @instituicaos.parceiros %></p>
 
+<ul>
+    <li><%= link_to "Editar", edit_instituicao_path(@instituicaos) %></li>
+    <li><%= link_to "Eliminar", instituicao_path(@instituicaos), data: {
+                    turbo_method: :delete,
+                } %></li>
+</ul>

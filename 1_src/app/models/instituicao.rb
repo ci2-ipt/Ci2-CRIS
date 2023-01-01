@@ -1,4 +1,3 @@
 class Instituicao < ApplicationRecord
-    validates :title, presence: true
-    validates :body, presence: true, length: { minimum: 10 }
+    validates :nome, presence: true
 end
