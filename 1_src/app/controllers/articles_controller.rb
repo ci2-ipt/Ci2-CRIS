@@ -44,6 +44,6 @@ end
   end
   private 
     def article_params
-      params.require(:article).permit(:title, :abstract)
+      params.require(:article).permit(:title, :abstract, :authors, :publish_date, :pages, :keywords, :url, :ids)
     end
 end
