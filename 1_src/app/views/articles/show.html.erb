@@ -1,7 +1,7 @@
 <h1><%= @article.title %></h1>
 
 <p><%= @article.abstract %></p>
-
+<p><%= @article.type %></p>
 <ul>
   <li><%= link_to "Edit", edit_article_path(@article) %></li>
   <li><%= link_to "Destroy", article_path(@article), data: {

@@ -1,0 +1,90 @@
+
+<%= form_with model: @article do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <% @article.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :abstract %><br>
+    <%= form.text_area :abstract %><br>
+    <% @article.errors.full_messages_for(:abstract).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :authors %><br>
+    <%= form.text_area :authors %><br>
+    <% @article.errors.full_messages_for(:authors).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :publish_date %><br>
+    <%= form.date_field :publish_date %><br>
+    <% @article.errors.full_messages_for(:publish_date).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :pages %><br>
+    <%= form.number_field :pages %><br>
+    <% @article.errors.full_messages_for(:pages).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :keywords %><br>
+    <%= form.text_area :keywords %><br>
+    <% @article.errors.full_messages_for(:keywords).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :url %><br>
+    <%= form.text_field :url %><br>
+    <% @article.errors.full_messages_for(:url).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :ids %><br>
+    <%= form.text_field :ids %><br>
+    <% @article.errors.full_messages_for(:ids).each do |message| %>
+      <div><%= message %></div>
+
+      
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :proceedings %><br>
+    <%= form.text_field :proceedings %><br>
+    <% @article.errors.full_messages_for(:proceedings).each do |message| %>
+      <div><%= message %></div>
+
+    <% end %>
+
+     <div>
+    <%= form.label :place %><br>
+    <%= form.text_field :place %><br>
+    <% @article.errors.full_messages_for(:place).each do |message| %>
+      <div><%= message %></div>
+
+    <% end %>
+  </div>
+  
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

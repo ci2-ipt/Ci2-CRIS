@@ -1,5 +1,32 @@
 <h1>New Article</h1>
 
-<%= render "form", article: @article %>
+
+<select id="sel" onchange="toggle()">
+  <option value="book">Book</option>
+  <option value="thesis">Thesis</option>
+  <option value="conference">Conference</option>
+  <option value="report">Report</option>
+  <option value="journal">Journal</option>
+</select>
+
+<div id="form">
+    
+</div>
+
+
+<%= render "formArticle", article: @article %>
+
 
 <%= link_to "Return  to Index", "/articles" %>
+
+<script>
+    function toggle() {
+        var cont = document.getElementById('form');
+        if (cont.style.display == 'block') {
+            cont.style.display = 'none';
+        }
+        else {
+            cont.style.display = 'block';
+        }
+    }
+</script>

@@ -65,52 +65,8 @@
       
     <% end %>
   </div>
-  
 
   <div>
     <%= form.submit %>
   </div>
 <% end %>
-
-<div>
-<p> Select one from the given options:
-        <select id="select1" onchange="getOption()">
-            <option value="book">Book</option>
-            <option value="conference">Conference</option>
-            <option value="journal">Journal</option>
-            <option value="report">Report</option>
-            <option value="thesis">Thesis</option>
-        </select>
-    </p></div>
-
-<script type="text/javascript">
-    function getOption() {
-        selectElement = document.querySelector('#select1');
-        output = selectElement.value;
-        switch (output) {
-          case "book":
-            console.log("You entered book");
-            break;
-          
-          case "conference":
-            console.log("You entered conference");
-            break;
-
-          case "journal":
-            console.log("You entered journal");
-            break;
-
-          case "report":
-            console.log("You entered report");
-            break;
-
-          case "thesis":
-            console.log("You entered thesis");
-            break;
-        
-          default:
-            console.log("You entered " + output);
-            break;
-        }
-    }
-    </script>
