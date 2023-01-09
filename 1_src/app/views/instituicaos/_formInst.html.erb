@@ -1,7 +1,7 @@
 <%= form_with model: @instituicaos do |form| %>
   <div>
     <%= form.label :nome %><br>
-    <%= form.text_field :nome %>
+    <%= form.text_field :nome, :class => "form-control" %>
     <% @instituicaos.errors.full_messages_for(:nome).each do |message| %>
       <div><%= message %></div>
     <% end %>
@@ -9,20 +9,60 @@
 
   <div>
     <%= form.label :url %><br>
-    <%= form.text_area :url %>
+    <%= form.text_field :url, :class => "form-control" %>
+    <% @instituicaos.errors.full_messages_for(:url).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
   
   <div>
     <%= form.label :imagem %><br>
-    <%= form.file_field :imagem, accept: 'image/png,image/jpeg' %>
+    <%= form.file_field :imagem, accept: 'image/png,image/jpeg', id: "filePicker"  %>
+    <% @instituicaos.errors.full_messages_for(:url).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
 
   <div>
     <%= form.label :parceiros %><br>
-    <%= form.text_area :parceiros %>
+    <%= form.text_field :parceiros, :class => "form-control" %>
+    <% @instituicaos.errors.full_messages_for(:parceiros).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
 
   <div>
     <%= form.submit %>
   </div>
 <% end %>
+
+<script> 
+// script para base64
+var handleFileSelect = function(evt) {
+    var files = evt.target.files;
+    var file = files[0];
+
+    if (files && file) {
+        var reader = new FileReader();
+
+        reader.onload = function(readerEvt) {
+            var binaryString = readerEvt.target.result;
+            var fileending = file.type;
+            if(fileending == "image/jpeg")
+            {
+                fileending = "image/jpg";
+            }
+            var test = btoa(binaryString);
+            var final = "data:"+fileending+";base64,"+test;
+        };
+
+        reader.readAsBinaryString(file);
+    }
+};
+
+if (window.File && window.FileReader && window.FileList && window.Blob) {
+    document.getElementById('filePicker').addEventListener('change', handleFileSelect, false);
+} else {
+    alert('The File APIs are not fully supported in this browser.');
+}
+</script>

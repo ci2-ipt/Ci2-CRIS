@@ -44,6 +44,6 @@ class InstituicaosController < ApplicationController
 
   private
     def instituicao_params
-      params.require(:Instituicao).permit(:nome, :url, :imagem, :parceiros)
+      params.require(:instituicao).permit(:nome, :url, :imagem, :parceiros)
     end
 end
