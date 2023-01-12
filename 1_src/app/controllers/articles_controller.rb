@@ -47,36 +47,48 @@ end
       params.require(:article).permit(:title, :abstract, :authors, :publish_date, :pages, :keywords, :url, :ids)
     end
 end
-
-
-
-class BooksController < ArticlesController
-  public 
-  def book_params
-    params.require(:book).permit(:title, :abstract, :authors, :publish_date, :pages, :keywords, :url, :ids, :edition, :publisher)
-  end
-end
-
+=begin
 class ThesisController < ArticlesController
   def thesis_params
+
+    def new
+      @thesis = Thesis.new
+    end
+
     params.require(:thesis).permit(:title, :abstract, :authors, :publish_date, :pages, :keywords, :url, :ids, :university, :thesis_type)
   end
 end
 
 class JournalsController < ArticlesController
   def journal_params
+
+    def new
+      @journal = Journal.new
+    end
+
     params.require(:journal).permit(:title, :abstract, :authors, :publish_date, :pages, :keywords, :url, :ids, :journal_name)
   end
 end
 
 class ReportsController < ArticlesController
   def report_params
+
+    def new
+      @report = Report.new
+    end
+
     params.require(:report).permit(:title, :abstract, :authors, :publish_date, :pages, :keywords, :url, :ids, :journal_name)
   end
 end
 
 class ConferenceController < ArticlesController
   def conference_params
+
+    def new
+      @conference = Conference.new
+    end
+
     params.require(:conference).permit(:title, :abstract, :authors, :publish_date, :pages, :keywords, :url, :ids, :journal_name)
   end
 end
+=end

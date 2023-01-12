@@ -1,27 +1,6 @@
 <h1>Edit Article</h1>
 
-<%= if @article.type == null%>
-    <%= render "formArticle", article: @article %>
-<%end%>
+<%= render "formArticle", article: @article %>
 
-<%= if @article.type == 'book'%>
-    <%= render "formBook", article: @article %>
-<%end%>
-
-<%= if @article.type == 'conference'%>
-    <%= render "form", article: @article %>
-<%end%>
-
-<%= if @article.type == 'journal'%>
-    <%= render "form", article: @article %>
-<%end%>
-
-<%= if @article.type == 'report'%>
-    <%= render "form", article: @article %>
-<%end%>
-
-<%= if @article.type == 'thesis'%>
-    <%= render "form", article: @article %>
-<%end%>
 
 <%= link_to "Return  to Index", "/articles" %>
